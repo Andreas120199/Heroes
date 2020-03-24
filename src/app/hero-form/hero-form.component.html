@@ -1,0 +1,88 @@
+<div *ngIf="error">Hero with ID {{ this.id }} is not available</div>
+
+<form>
+  <h1>Hero Form</h1>
+  <mat-form-field appearance="outline">
+    <mat-label>Hero Name</mat-label>
+    <input matInput placeholder="type the hero name" name="heroName" id="heroName" [(ngModel)]="hero.heroName" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline">
+    <mat-label>Real Name</mat-label>
+    <input matInput placeholder="type the real name" name="realName" id="realName" [(ngModel)]="hero.realName" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline">
+    <mat-label>Skill</mat-label>
+    <input matInput placeholder="type the hero skill" name="skill" id="skill" [(ngModel)]="hero.skill" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Universe</mat-label>
+    <mat-select matNativeControl name="universe" id="universe" [(ngModel)]="hero.universe">
+      <mat-option value="MCU">
+        Marvel Cinematic Universe
+      </mat-option>
+      <mat-option value="DCEU">
+        DC Extended Universe
+      </mat-option>
+      <mat-option value="World of Warcraft">
+        World of Warcraft
+      </mat-option>
+      <mat-option value="My Hero Academia">
+        My Hero Academia
+      </mat-option>
+      <mat-option value="Isekaid">
+        Isekaid
+      </mat-option>
+      <mat-option value="Fate Universe">
+        Fate Universe
+      </mat-option>
+      <mat-option value="League of Legend">
+        League of Legend
+      </mat-option>
+      <mat-option value="Soul Society">
+        Soul Society
+      </mat-option>
+      <mat-option value="Overwatch">
+        Overwatch
+      </mat-option>
+      <mat-option value="Assasin Creed Universe">
+        Assasin Creed Universe
+      </mat-option>
+      <mat-option value="Destiny">
+        Destiny
+      </mat-option>
+      <mat-option value="Arknights Universe">
+        Arknights Universe
+      </mat-option>
+      <mat-option value="Paladin">
+        Paladin
+      </mat-option>
+      <mat-option value="SMITE">
+        SMITE
+      </mat-option>
+      <mat-option value="Dark Souls">
+        Dark Souls
+      </mat-option>
+      <mat-option value="Code Veins">
+        Code Veins
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="buttons">
+    <div *ngIf="update">
+      <button mat-raised-button color="warn" (click)="deleteHero()">
+        delete
+      </button>
+      <button mat-raised-button color="primary" (click)="updateHero()">
+        update
+      </button>
+    </div>
+    <div *ngIf="!update">
+      <button mat-raised-button (click)="postHero()" color="primary">
+        post
+      </button>
+    </div>
+  </div>
+</form>
